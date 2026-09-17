@@ -2,17 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
-    <meta name="theme-color" content="#667eea">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Snake Game">
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#312e81">
     <link rel="stylesheet" href="style.css">
-    <title>Snake Game</title>
+    <title>Movie Recommendation Hub</title>
 </head>
 <body>
-    <!-- Rest of your HTML stays the same -->
+    <main class="container">
+        <h1>🎬 Movie Recommendation Hub</h1>
+        <p class="subtitle">Pick your mood and genre to discover what to watch next.</p>
+
+        <section class="controls">
+            <label for="moodSelect">Mood</label>
+            <select id="moodSelect">
+                <option value="all">Any mood</option>
+                <option value="feel-good">Feel Good</option>
+                <option value="thrilling">Thrilling</option>
+                <option value="emotional">Emotional</option>
+                <option value="thought-provoking">Thought-Provoking</option>
+            </select>
+
+            <label for="genreSelect">Genre</label>
+            <select id="genreSelect">
+                <option value="all">Any genre</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Animation">Animation</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Crime">Crime</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Thriller">Thriller</option>
+            </select>
+
+            <button id="recommendBtn" type="button">Recommend a Movie</button>
+        </section>
+
+        <section id="recommendationCard" class="card hidden" aria-live="polite">
+            <h2 id="movieTitle"></h2>
+            <p><strong>Year:</strong> <span id="movieYear"></span></p>
+            <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
+            <p><strong>Mood:</strong> <span id="movieMood"></span></p>
+            <p id="movieDescription"></p>
+        </section>
+
+        <p id="emptyState" class="empty-state hidden">No matching movies found. Try a different mood or genre.</p>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
